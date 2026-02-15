@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name":"flavourtown-dark-mode",
+    "version":"1.0.0",
+    "description":"A dark mode extension for the Flavourtown.",
+    "permissions":["storage"],
+    "host_permissions": [
+        "https://flavourtown.hackclub.com/*"
+    ],
+    "action":[
+        "popup": "popup.html"
+    ]
+}
