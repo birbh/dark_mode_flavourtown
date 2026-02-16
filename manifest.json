@@ -7,7 +7,19 @@
     "host_permissions": [
         "https://flavourtown.hackclub.com/*"
     ],
-    "action":[
-        "popup": "popup.html"
-    ]
+    "action":{
+        "default_popup": "popup.html"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[{
+        "matches":["https://flavourtown.hackclub.com/*"],
+        "js":["content/content.js"]
+    }],
+    "web_accessible_resources":[{
+        "resources": ["styles/dark-mode.css"],
+        "matches": ["https://flavourtown.hackclub.com/*"]
+    }]
+
 }
