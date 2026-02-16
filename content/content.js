@@ -1,6 +1,11 @@
+// browser compatibility
+if (typeof chrome === "undefined" && typeof browser !== "undefined") {
+  globalThis.chrome = browser;
+}
+
 const STYLE_ID="dark-mode-flavourtown-style";
 
-chrome.storage.sync.get({darkModeEnabled:false},({darkModeEnabled})=>{
+chrome.storage.local.get({darkModeEnabled:false},({darkModeEnabled})=>{
     if(darkModeEnabled) {
         applyDarkMode();
         // Send usage ping when dark mode is enabled on load
@@ -10,7 +15,7 @@ chrome.storage.sync.get({darkModeEnabled:false},({darkModeEnabled})=>{
 });
 
 chrome.storage.onChanged.addListener((changes,area)=>{
-    if(area !=="sync" || !changes.darkModeEnabled) return;
+    if(area !=="local" || !changes.darkModeEnabled) return;
     if(changes.darkModeEnabled.newValue) {
         applyDarkMode();
         // Send usage ping when user toggles dark mode on

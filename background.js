@@ -1,3 +1,8 @@
+// browser compatibility
+if (typeof chrome === "undefined" && typeof browser !== "undefined") {
+  globalThis.chrome = browser;
+}
+
 const PROJECT_ID = "13173";
 const PING_URL = "https://flavortown.hackclub.com/api/v1";
 

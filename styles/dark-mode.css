@@ -1,0 +1,25 @@
+/* Flavortown Dark Mode */
+body {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+a {
+  color: #6eb5ff !important;
+}
+
+header, nav, footer {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
+
+button, input, select, textarea {
+  background-color: #333 !important;
+  color: #e0e0e0 !important;
+  border-color: #555 !important;
+}
+
+.card, .panel, div[class*="card"], div[class*="panel"] {
+  background-color: #252525 !important;
+  border-color: #444 !important;
+}

@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Mode Flavourtown</title>
-    <link rel="stylesheet" href="chrome.runtime.getURL('..styles/dark-mode.css')">
-    <link rel="stylesheet" href="styles/dark-mode.css">
+    <style>
+        body{
+            width:200px;
+            padding: 16px;
+            font-family: Arial, sans-serif;
+        }
+        label{
+            display:flex;
+            align-items: center;
+            gap:10px;
+            cursor:pointer;
+        }
+    </style>
 </head>
+<body>
+    <label>
+        <input type="checkbox" id="toggle">
+        Dark Mode
+    </label>
+    <script src="popup.js"></script>
+</body>
 </html>
