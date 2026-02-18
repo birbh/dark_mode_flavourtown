@@ -8,16 +8,27 @@
 </head>
 <body>
     <main class="popup">
-        <h1>Dang the dark vibes!! </h1>
-        <p>Toggle the button dark mode for Flavourtown</p>
-        <label class="switch">
-        <input type="checkbox" id="toggle">
-        <span class="slider round"></span>
-        </label>
+        <div class="header">
+            <span class="logo">🕋</span>
+            <div class="header-text">
+                <h1>Dang the Dark vibes!!</h1>
+                <p class="subtitle">flavortown.hackclub.com</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="toggle-row">
+            <div class="toggle-label">
+                <span class="label-title">Dark Vibes</span>
+                <span class="label-status" id="status">Disabled</span>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
     </main>
-    <div>
-        
-    </div>
     <script src="popup.js"></script>
 </body>
 </html>
