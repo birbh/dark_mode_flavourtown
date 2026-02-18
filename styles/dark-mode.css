@@ -640,7 +640,7 @@ svg {
     background-color: var(--ctp-base) !important;
     border-color: var(--ctp-surface1) !important;
     color: var(--ctp-text) !important;
-    animation: dvSlideInDown 0.35s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+    animation: fadeIn 0.3s ease-out both;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7),
                 0 0 0 1px rgba(200, 200, 200, 0.06) !important;
 }
