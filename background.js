@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       return;
     }
     
-    // Send the ping with custom header
+    // Send the ping with  header
     fetch(PING_URL, {
       method: "POST",
       headers: {

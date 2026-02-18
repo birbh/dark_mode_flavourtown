@@ -1,115 +1,110 @@
 # Flavortown Dark Mode
 
-Its browser extension that adds dark mode to flavortown.
+Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme onto [flavortown-hcb](https://flavortown.hackclub.com) so you can actually use it at night.
 
-## Whats This?
 
-This extension does three things:
-1. Makes "flavortown.hackclub.com "dark themed
-2. Remembers your preference 
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+  - [Chrome / Edge / Brave](#chrome--edge--brave)
+  - [Firefox](#firefox)
+  - [Safari](#safari)
+- [How to Use](#how-to-use)
+- [File Structure](#file-structure)
+
+
+## Features
+
+- True black dark theme — not some washed-out grey, actual dark. 
+- Smooth animations
+- Remembers your preference — toggle it once and it stays on until you turn it off, even after closing the browser
 
 ## Installation
 
+### Chrome / Edge / Brave
+
+**Load Unpacked**
+
+1. Download or clone this repo
+2. Open your browser and go to `chrome://extensions` (or `edge://extensions` / `brave://extensions`)
+3. Enable Developer mode in the top right corner
+4. Click Load unpacked
+5. Select the folder containing `manifest.json`
+6. Done — the extension icon should appear in toolbar
+
 ### Firefox
+
+**Load Temporarily**
+
+> temporary add-ons in Firefox are removed when you close the browser. For a permanent install you'd need to sign the extension.
+
 1. Download or clone this repo
 2. Open Firefox and go to `about:debugging`
-3. Click "This Firefox" in the sidebar
-4. Click "Load Temporary Add-on"
+3. Click **This Firefox** in the sidebar
+4. Click **Load Temporary Add-on**
 5. Navigate to the folder and select `manifest.json`
-6. Done! (Note: temporary extensions disappear when you close Firefox)
+6. You're good to go — until you restart Firefox
 
-### Chrome/Edge
-1. Download or clone this repo
-2. Open Chrome and go to `chrome://extensions`
-3. Turn on "Developer mode" (top right)
-4. Click "Load unpacked"
-5. Select the folder containing `manifest.json`
-6. You're good to go!
+### Safari
+
+1. Download the zip from releases
+2. Unzip the folder
+3. Open Safari and do CMD + ,
+4. Navigate to Settings and check the checkbox saying Show features for web developers
+5. Go to the Developer tab
+6. Check the Allow unsigned extensions checkbox at the bottom
+7. Click Add temporary extension
+8. Select the folder you downloaded and unzipped earlier
 
 ## How to Use
 
-1. Go to flavortown.hackclub.com
+1. Go to [flavortown.hackclub.com](https://flavortown.hackclub.com)
 2. Click the extension icon in your browser toolbar
-3. Toggle "Dark Mode" on
-4. Enjoy not being blinded
+3. Toggle **Dark Mode** on
+4. That's literally it
 
-That's it. The extension only works on flavortown.hackclub.com — it won't mess with other sites.
+The extension only activates on Flavortown — it won't do anything on other tabs.
 
-## How It Works (For the Curious)
 
-Content Script (`content/content.js`)
-- Runs only on flavortown.hackclub.com
-- Injects a dark theme CSS file when you toggle dark mode on
-- Removes it when you toggle it off
+## Development
 
-Popup (`popup/popup.html` + `popup.js`)
-- Simple checkbox toggle
-- Saves your preference to browser storage
-- No fancy stuff, just works
+Want to mess with the theme? Everything visual lives in `styles/dark-mode.css`. The palette is defined as CSS variables at the top of the file — change those and the whole theme updates.
 
-Background Script (`background.js`)
-- Sends ONE ping per browser session when dark mode is active
-- Includes the header `X-Flavortown-Ext-13173: true` (this is how Flavortown tracks usage)
-- Won't spam — session gate prevents multiple pings
+```css
+--ctp-base: #0d0d0d        /* page background */
+--ctp-surface0: #181818    /* cards, inputs */
+--ctp-surface1: #222222    /* raised surfaces */
+--ctp-text: #e6e6e6        /* primary text */
+--ctp-mauve: #d0d0d0       /* accent (silver) */
+```
 
-Storage
-- Uses `chrome.storage.local` to remember if you have dark mode on
-- Uses `chrome.storage.session` to prevent ping spam (resets when you restart the browser)
+After making changes:
+1. Go to your browser's extensions page
+2. Hit the **reload** button on this extension
+3. Refresh Flavortown to see your changes
 
-## Privacy
-
-This extension:
-- ✅ Only runs on flavortown.hackclub.com
-- ✅ Stores your dark mode preference locally
-- ✅ Sends exactly one usage ping per session (timestamp only)
-- ❌ Does NOT track your browsing
-- ❌ Does NOT collect personal data
-- ❌ Does NOT phone home except for the usage ping
-
-## Technical Details
-
-Manifest V3 - Uses the modern extension standard
-Browser Compatibility - Works in Firefox, Chrome, Edge, Brave
-Permissions - Only needs `storage` + access to flavortown.hackclub.com
-No Backend - No server required, just sends a ping to Flavortown's API
 
 ## File Structure
 
 ```
-flavortown-dark-mode/
-├── manifest.json          # Extension config
-├── background.js          # Handles usage pings
+dark_mode_flavourtown/
+├── manifest.json          
+├── background.js         
 ├── content/
-│   └── content.js        # Injects dark mode CSS
+│   └── content.js        
 ├── popup/
-│   ├── popup.html        # Toggle UI
-│   └── popup.js          # Toggle logic
+│   ├── popup.html         
+│   └── popup.js           
 ├── styles/
-│   └── dark-mode.css     # The actual dark theme
-└── README.md             # You are here
+│   └── dark-mode.css      
+└── README.md              
 ```
 
-## Development
-
-Want to tweak the dark theme? Edit `styles/dark-mode.css`.
-Want to change the ping behavior? Check `background.js`.
-Want to modify the popup? Look at `popup/popup.html` and `popup.js`.
-
-After making changes:
-1. Go to your browser's extensions page
-2. Click the reload button on this extension
-3. Refresh flavortown.hackclub.com to see changes
-
-
-
-## Contributing
-
-Found a bug? Want to improve the dark theme? 
-PRs welcome!
 
 ## License
 
 Check the LICENSE file for details.
 
 
-Made with late night coding 
+Made with caffeine and late night coding

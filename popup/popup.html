@@ -4,25 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark Mode Flavourtown</title>
-    <style>
-        body{
-            width:200px;
-            padding: 16px;
-            font-family: Arial, sans-serif;
-        }
-        label{
-            display:flex;
-            align-items: center;
-            gap:10px;
-            cursor:pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="popup.css" >
 </head>
 <body>
-    <label>
+    <main class="popup">
+        <h1>Dang the dark vibes!! </h1>
+        <p>Toggle the button dark mode for Flavourtown</p>
+        <label class="switch">
         <input type="checkbox" id="toggle">
-        Dark Mode
-    </label>
+        <span class="slider round"></span>
+        </label>
+    </main>
+    <div>
+        
+    </div>
     <script src="popup.js"></script>
 </body>
 </html>
