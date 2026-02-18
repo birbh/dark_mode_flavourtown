@@ -26,7 +26,7 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
 
 **Load Unpacked**
 
-1. Download or clone this repo
+1. Download the zip from releases
 2. Open your browser and go to `chrome://extensions` (or `edge://extensions` / `brave://extensions`)
 3. Enable Developer mode in the top right corner
 4. Click Load unpacked
@@ -39,7 +39,7 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
 
 > temporary add-ons in Firefox are removed when you close the browser. For a permanent install you'd need to sign the extension.
 
-1. Download or clone this repo
+1. Download the zip from releases
 2. Open Firefox and go to `about:debugging`
 3. Click **This Firefox** in the sidebar
 4. Click **Load Temporary Add-on**
