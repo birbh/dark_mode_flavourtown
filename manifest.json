@@ -8,7 +8,8 @@
         "48": "icons/icon-48.png",
         "128": "icons/icon-128.png"
     },
-    "permissions":["storage", "tabs"],
+    "permissions":["storage", "tabs","declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"],
     "host_permissions": [
         "https://flavortown.hackclub.com/*"
     ],
@@ -30,6 +31,16 @@
     "web_accessible_resources":[{
         "resources": ["styles/dark-mode.css"],
         "matches": ["https://flavortown.hackclub.com/*"]
-    }]
+    }],
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "flavortown_header",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]}
+
 
 }
