@@ -4050,3 +4050,7 @@ code {
     background: var(--ctp-surface1);
     outline: 0.4em solid var(--ctp-overlay0) !important;
 }
+
+.platform-notice{
+    background: rgb(73, 70, 70) !important;
+}
