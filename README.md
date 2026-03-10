@@ -6,19 +6,22 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
 ## Table of Contents
 
 - [Features](#features)
+- [Screenshot](#screenshot)
 - [Installation](#installation)
   - [Chrome / Edge / Brave](#chrome--edge--brave)
   - [Firefox](#firefox)
   - [Safari](#safari)
 - [How to Use](#how-to-use)
-- [File Structure](#file-structure)
 
 
 ## Features
 
-- True black dark theme — not some washed-out grey, actual dark. 
-- Smooth animations
-- Remembers your preference — toggle it once and it stays on until you turn it off, even after closing the browser
+ True black dark theme — not some washed-out grey, actual dark. 
+ Smooth animations
+ Remembers your preference 
+
+ ## screenshot
+ 
 
 ## Installation
 
@@ -61,10 +64,10 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
 
 1. Go to [flavortown.hackclub.com](https://flavortown.hackclub.com)
 2. Click the extension icon in your browser toolbar
-3. Toggle **Dark Mode** on
-4. That's literally it
+3. Toggle dark mode on
+4. That's  it
 
-The extension only activates on Flavortown — it won't do anything on other tabs.
+The extension only activates on Flavortown ..
 
 
 ## Development
@@ -81,25 +84,8 @@ Want to mess with the theme? Everything visual lives in `styles/dark-mode.css`. 
 
 After making changes:
 1. Go to your browser's extensions page
-2. Hit the **reload** button on this extension
+2. Hit the reload 
 3. Refresh Flavortown to see your changes
-
-
-## File Structure
-
-```
-dark_mode_flavourtown/
-├── manifest.json          
-├── background.js         
-├── content/
-│   └── content.js        
-├── popup/
-│   ├── popup.html         
-│   └── popup.js           
-├── styles/
-│   └── dark-mode.css      
-└── README.md              
-```
 
 
 ## License

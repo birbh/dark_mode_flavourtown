@@ -26,7 +26,8 @@
     },
     "content_scripts":[{
         "matches":["https://flavortown.hackclub.com/*"],
-        "js":["content/content.js"]
+        "js":["content/content.js"],
+        "run_at": "document_start"
     }],
     "web_accessible_resources":[{
         "resources": ["styles/dark-mode.css"],

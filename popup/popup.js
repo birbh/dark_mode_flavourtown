@@ -24,9 +24,14 @@ chrome.storage.local.get({ darkModeEnabled: false }, ({ darkModeEnabled }) => {
 });
 
 toggledark.addEventListener("change", () => {
-    chrome.storage.local.set({ darkModeEnabled: toggledark.checked });
-    updateStatus(toggledark.checked);
+    const enabled = toggledark.checked;
+    chrome.storage.local.set({ darkModeEnabled: enabled });
+    updateStatus(enabled);
+
+    // Apply instantly in the active tab without forcing a page reload.
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs[0]?.id) chrome.tabs.reload(tabs[0].id);
+        if (tabs[0]?.id) {
+            chrome.tabs.sendMessage(tabs[0].id, { type: "set-dark-mode", enabled });
+        }
     });
 });

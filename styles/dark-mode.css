@@ -1,5 +1,66 @@
 /* Flavortown Dark Mode – Dark Vibes Black Theme */
 
+html.dm-preload *,
+html.dm-preload *::before,
+html.dm-preload *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+@keyframes dvRouteEnter {
+    from {
+        opacity: 0.01;
+        transform: translateY(10px) scale(0.995);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+html.dm-route-enter main,
+html.dm-route-enter [role="main"],
+html.dm-route-enter [class*="page"],
+html.dm-route-enter [class*="layout"],
+html.dm-route-enter [class*="dashboard"],
+html.dm-route-enter .kitchen-index,
+html.dm-route-enter .explore__main,
+html.dm-route-enter .votes-new__main {
+    animation: dvRouteEnter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+    will-change: opacity, transform, filter;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.dm-route-enter main,
+    html.dm-route-enter [role="main"],
+    html.dm-route-enter [class*="page"],
+    html.dm-route-enter [class*="layout"],
+    html.dm-route-enter [class*="dashboard"],
+    html.dm-route-enter .kitchen-index,
+    html.dm-route-enter .explore__main,
+    html.dm-route-enter .votes-new__main {
+        animation: none !important;
+    }
+}
+
+@keyframes dvFadeInScale {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes dvBackdropIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
  :root {
     /* ──  BLACK PALETTE ── */
     --ctp-base:     #0d0d0d;   /* page bg      */
@@ -132,6 +193,105 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Polished interaction baseline across common UI controls */
+:is(button, .btn, [role="button"], a, .dropdown__item, .sidebar__nav-link, .explore__nav-component) {
+    transition: transform 0.2s ease, box-shadow 0.22s ease, color 0.22s ease, background-color 0.22s ease, border-color 0.22s ease !important;
+}
+
+:is(button, .btn, [role="button"], .dropdown__item):hover {
+    transform: translateY(-1px);
+}
+
+:is(input, textarea, select, .form-field, .input__field) {
+    transition: border-color 0.2s ease, box-shadow 0.22s ease, background-color 0.22s ease !important;
+}
+
+:is(input, textarea, select, .form-field, .input__field):focus {
+    box-shadow: 0 0 0 3px rgba(208, 208, 208, 0.18) !important;
+}
+
+/* Soft reveal for content-heavy surfaces */
+:is(
+    .card,
+    .state-card,
+    .project-card,
+    .flavortown-project-card,
+    .shop-item-card,
+    .post,
+    .vote-category,
+    .kitchen-help-card,
+    .achievement,
+    .achievement-card,
+    .comments-section,
+    .flavortown-goals-enhanced
+) {
+    animation: dvFadeInScale 0.36s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Route enter stagger for top-level page children */
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > * {
+    animation: dvFadeInScale 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > :nth-child(1) { animation-delay: 0.02s; }
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > :nth-child(2) { animation-delay: 0.05s; }
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > :nth-child(3) { animation-delay: 0.08s; }
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > :nth-child(4) { animation-delay: 0.11s; }
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > :nth-child(5) { animation-delay: 0.14s; }
+html.dm-route-enter :is(main, [role="main"], [class*="page"], [class*="layout"], [class*="dashboard"]) > :nth-child(6) { animation-delay: 0.17s; }
+
+
+
+/* Feed and list smoothness */
+:is(.post, .comment, .table tr, .leaderboard__row, .shop-order__item, .dropdown__item) {
+    will-change: transform, opacity;
+}
+
+:is(.table tr, .leaderboard__row):hover {
+    background-color: var(--ctp-surface1) !important;
+}
+
+/* Media polish */
+img, video {
+    transition: transform 0.28s ease, filter 0.28s ease;
+}
+
+:is(.post img, .flavortown-project-img img, .shop-item-card img):hover {
+    transform: scale(1.01);
+    filter: brightness(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :is(
+        .card,
+        .state-card,
+        .project-card,
+        .flavortown-project-card,
+        .shop-item-card,
+        .post,
+        .vote-category,
+        .kitchen-help-card,
+        .achievement,
+        .achievement-card,
+        .comments-section,
+        .flavortown-goals-enhanced,
+        .modal,
+        .cmd-modal,
+        .dropdown__menu,
+        .flavortown-screenshot-modal,
+        .achievement-toast
+    ) {
+        animation: none !important;
+    }
+
+    :is(button, .btn, [role="button"], a, .dropdown__item, .sidebar__nav-link, .explore__nav-component),
+    :is(input, textarea, select, .form-field, .input__field),
+    img,
+    video {
+        transition: none !important;
+    }
+}
+
 body {
     background-color: var(--ctp-base) !important;
     color: var(--ctp-text) !important;
@@ -183,7 +343,7 @@ body::before {
 
 .sidebar__nav-link--active {
     background-color: var(--ctp-surface1) !important;
-    color: var(--ctp-text) !important;
+    color: black !important;
 }
 
 .sidebar__nav-icon {
@@ -643,6 +803,23 @@ svg {
     animation: fadeIn 0.3s ease-out both;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7),
                 0 0 0 1px rgba(200, 200, 200, 0.06) !important;
+}
+
+/* Keep transaction history modal centered and fully usable on smaller viewports. */
+dialog#balance-modal.modal[open] {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+    width: min(92vw, 820px) !important;
+    max-height: 90vh !important;
+    overflow: hidden !important;
+}
+
+dialog#balance-modal .balance-history {
+    max-height: calc(90vh - 10rem) !important;
+    overflow-y: auto !important;
 }
 
 .modal h2 {
@@ -2575,6 +2752,14 @@ a:hover {
     background-color: var(--ctp-surface0) !important;
     border-color: var(--ctp-surface1) !important;
     color: var(--ctp-text) !important;
+    animation: dvFadeInUp 0.35s ease both !important;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+.votes-new__project-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+    border-color: var(--ctp-overlay0) !important;
 }
 
 .votes-new__project-details {
@@ -2601,6 +2786,42 @@ a:hover {
     color: var(--ctp-accent) !important;
 }
 
+.votes-new__project-description {
+    color: var(--ctp-subtext0) !important;
+}
+
+.votes-new__project-card-stat span {
+    color: var(--ctp-subtext0) !important;
+}
+
+.votes-new__project-card-byline {
+    color: var(--ctp-subtext0) !important;
+}
+
+.votes-new__score-card-toggle {
+    background-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+    transition: background-color 0.22s ease !important;
+}
+
+.votes-new__score-card-toggle:hover {
+    background-color: var(--ctp-surface2) !important;
+}
+
+.votes-new__score-card::before {
+    background: var(--ctp-surface0) repeating-conic-gradient(from 0deg, rgba(180, 180, 180, 0.06) 0deg 90deg, transparent 90deg 180deg) !important;
+    background-size: 40px 40px !important;
+}
+
+.vote-category__score {
+    color: var(--ctp-subtext1) !important;
+    font-weight: 600 !important;
+}
+
+.vote-category__stars {
+    background-color: var(--ctp-surface0) !important;
+}
+
 .votes-new__project-buttons {
     background-color: transparent !important;
 }
@@ -2613,6 +2834,7 @@ a:hover {
     background-color: var(--ctp-surface0) !important;
     border-color: var(--ctp-surface1) !important;
     color: var(--ctp-text) !important;
+    animation: dvSlideInDown 0.35s ease both !important;
 }
 
 .votes-new__form h1 {
@@ -2623,6 +2845,13 @@ a:hover {
     background-color: var(--ctp-surface0) !important;
     border-color: var(--ctp-surface1) !important;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+    animation: dvFadeInUp 0.3s ease both !important;
+    transition: transform 0.22s ease, filter 0.22s ease !important;
+}
+
+.vote-category:hover {
+    transform: translateY(-2px) !important;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)) !important;
 }
 
 .vote-category__header {
@@ -2641,6 +2870,10 @@ a:hover {
 
 .vote-category__star {
     color: var(--ctp-overlay0) !important;
+}
+
+.vote-category__star {
+    transition: color 0.15s ease, transform 0.15s ease !important;
 }
 
 .vote-category__input:checked~.vote-category__star {
@@ -2701,8 +2934,14 @@ a:hover {
     border-color: var(--ctp-green) !important;
 }
 
+.btn-submit {
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
 .btn-submit:hover {
-    background-color: var(--ctp-green) !important;
+    background-color: var(--ctp-teal) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(127, 212, 196, 0.3) !important;
 }
 
 .form-checkbox label {
