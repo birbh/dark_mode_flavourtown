@@ -1,43 +1,51 @@
 // browser compatibility
 if (typeof chrome === "undefined" && typeof browser !== "undefined") {
-  globalThis.chrome = browser;
+    globalThis.chrome = browser;
 }
 
-const STYLE_ID="dark-mode-flavourtown-style";
-const BOOTSTRAP_ID = "dark-mode-flavourtown-bootstrap";
+const STYLE_ID = "dark-mode-flavourtown-style";
 const PREF_HINT_KEY = "flavortownDarkModeEnabled";
-const PRELOAD_CLASS = "dm-preload";
+const INTRO_SEEN_KEY = "flavortownDarkModeIntroSeen";
+const NO_PAGE_INTRO_CLASS = "dm-no-page-intro";
 const ROUTE_ENTER_CLASS = "dm-route-enter";
 
 let routeTransitionTimer = null;
 let routeTransitionHooksReady = false;
 
-// Paint dark immediately to avoid white flash before async storage resolves.
-applyBootstrapDark();
+if (isIntroSeen()) {
+    document.documentElement.classList.add(NO_PAGE_INTRO_CLASS);
+}
+
+// Reference-style early apply using cached hint so the stylesheet is attached immediately.
+if (getDarkHint()) {
+    applyDarkMode();
+}
+
 initRouteTransitionHooks();
 
-chrome.storage.local.get({darkModeEnabled:false},({darkModeEnabled})=>{
-    if(darkModeEnabled) {
+chrome.storage.local.get({ darkModeEnabled: false }, ({ darkModeEnabled }) => {
+    if (darkModeEnabled) {
         applyDarkMode();
         setDarkHint(true);
+        markIntroSeen();
         // Send usage ping when dark mode is enabled on load
         chrome.runtime.sendMessage({ type: "usage-ping" });
-    }
-    else {
+    } else {
         removeDarkMode();
         setDarkHint(false);
     }
 });
 
-chrome.storage.onChanged.addListener((changes,area)=>{
-    if(area !=="local" || !changes.darkModeEnabled) return;
-    if(changes.darkModeEnabled.newValue) {
+chrome.storage.onChanged.addListener((changes, area) => {
+    if (area !== "local" || !changes.darkModeEnabled) return;
+
+    if (changes.darkModeEnabled.newValue) {
         applyDarkMode();
         setDarkHint(true);
+        markIntroSeen();
         // Send usage ping when user toggles dark mode on
         chrome.runtime.sendMessage({ type: "usage-ping" });
-    }
-    else {
+    } else {
         removeDarkMode();
         setDarkHint(false);
     }
@@ -46,43 +54,32 @@ chrome.storage.onChanged.addListener((changes,area)=>{
 // Instant toggle path from popup without forcing a page reload.
 chrome.runtime.onMessage.addListener((msg) => {
     if (msg?.type !== "set-dark-mode") return;
-        if (msg.enabled) {
-            applyDarkMode();
-            setDarkHint(true);
-        } else {
-            removeDarkMode();
-            setDarkHint(false);
-        }
+
+    if (msg.enabled) {
+        applyDarkMode();
+        setDarkHint(true);
+        markIntroSeen();
+    } else {
+        removeDarkMode();
+        setDarkHint(false);
+    }
 });
 
+function applyDarkMode() {
+    if (document.getElementById(STYLE_ID)) return;
 
-
-function applyDarkMode(){
-    document.documentElement.classList.add(PRELOAD_CLASS);
-    if(document.getElementById(STYLE_ID)) return; 
-    const link=document.createElement("link");
-    link.id=STYLE_ID;
-    link.rel="stylesheet";
-    link.href=chrome.runtime.getURL('styles/dark-mode.css');
-        link.addEventListener("load", () => {
-            removeBootstrapDark();
-            // Keep preload class for one paint so styles settle without re-animation.
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    document.documentElement.classList.remove(PRELOAD_CLASS);
-                });
-            });
-        }, { once: true });
+    const link = document.createElement("link");
+    link.id = STYLE_ID;
+    link.rel = "stylesheet";
+    link.href = chrome.runtime.getURL("styles/dark-mode.css");
     // At document_start, <head> may not exist yet.
     (document.head || document.documentElement).appendChild(link);
 }
 
-function removeDarkMode(){
-    const link=document.getElementById(STYLE_ID);
-    if(link) 
-        link.remove();
-        removeBootstrapDark();
-    document.documentElement.classList.remove(PRELOAD_CLASS);
+function removeDarkMode() {
+    const link = document.getElementById(STYLE_ID);
+    if (link) link.remove();
+
     document.documentElement.classList.remove(ROUTE_ENTER_CLASS);
     if (routeTransitionTimer) {
         clearTimeout(routeTransitionTimer);
@@ -106,28 +103,21 @@ function setDarkHint(enabled) {
     }
 }
 
-function applyBootstrapDark() {
-    if (document.getElementById(BOOTSTRAP_ID)) return;
-    const style = document.createElement("style");
-    style.id = BOOTSTRAP_ID;
-    style.textContent = `
-        html, body, #__next, main, section, article, aside, nav, header, footer, [class*="page"], [class*="layout"], [class*="container"] {
-            background: #0d0d0d !important;
-            color: #e6e6e6 !important;
-        }
-
-        /* Avoid bright flashes on common card/surface containers during hydration */
-        div, form {
-            background-color: #0d0d0d;
-            border-color: #222222;
-        }
-    `;
-    (document.head || document.documentElement).appendChild(style);
+function isIntroSeen() {
+    try {
+        return sessionStorage.getItem(INTRO_SEEN_KEY) === "1";
+    } catch {
+        return false;
+    }
 }
 
-function removeBootstrapDark() {
-    const style = document.getElementById(BOOTSTRAP_ID);
-    if (style) style.remove();
+function markIntroSeen() {
+    try {
+        sessionStorage.setItem(INTRO_SEEN_KEY, "1");
+    } catch {
+        // Ignore sessionStorage errors.
+    }
+    document.documentElement.classList.add(NO_PAGE_INTRO_CLASS);
 }
 
 function triggerRouteEnterTransition() {

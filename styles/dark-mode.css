@@ -1,9 +1,21 @@
 /* Flavortown Dark Mode – Dark Vibes Black Theme */
 
-html.dm-preload *,
-html.dm-preload *::before,
-html.dm-preload *::after {
-    transition: none !important;
+html.dm-no-page-intro :is(
+    body,
+    .sidebar,
+    .state-card,
+    .project-card,
+    .flavortown-project-card,
+    .shop-item-card,
+    .post,
+    .votes-new__project-card,
+    .votes-new__form,
+    .vote-category,
+    .modal,
+    .cmd-modal,
+    .achievement-toast,
+    .dropdown__menu
+) {
     animation: none !important;
 }
 
@@ -371,7 +383,9 @@ body::before {
 }
 
 .sidebar__user-avatar {
-    background-color: var(--ctp-accent) !important;
+    background-color: var(--ctp-crust) !important;
+
+    
 }
 
 .sidebar__user-avatar-hat,
@@ -380,8 +394,8 @@ body::before {
 }
 
 .sidebar__user-name {
-    color: var(--ctp-crust) !important;
-    background-color: var(--ctp-accent) !important;
+    color: var(--ctp-accent-hue) !important;
+    background-color: var(--ctp-base) !important;
 }
 
 .sidebar__user-balance {
@@ -711,6 +725,28 @@ svg {
 
 .projects-show__admin-actions .btn:hover {
     color: var(--ctp-accent) !important;
+}
+.projects-show__info-card{
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;  
+    color: var(--ctp-text) !important; 
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.projects-show__info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 8px,
+        transparent 8px,
+        transparent 18px
+    ) !important;
+    opacity: 0.65;
 }
 
 .input {
@@ -1271,7 +1307,7 @@ a:hover {
 }
 
 .project-card__stats-icon {
-    color: var(--ctp-overlay1) !important;
+    color: var(--ctp-accent) !important;
 }
 
 .projects-show__admin-actions {
@@ -1760,6 +1796,16 @@ a:hover {
     background-color: var(--ctp-peach) !important;
     border-radius: 8px !important;
 }
+
+.explore__details-content{
+    background-color: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+    border-radius: 2em !important;
+}
+.explore__details-content:hover{
+    background-color: var(--ctp-surface1) !important;
+}
+
 
 .shop-order__content {
     background-color: var(--ctp-surface0) !important;
@@ -4220,13 +4266,18 @@ code {
     text-shadow: none !important;
 }
 
-.xp-window-wrapper .title-bar-controls button {
+.title-bar-controls{
+    filter: none;
+    background: none;
+}
+
+/* .xp-window-wrapper .title-bar-controls button {
     background: var(--ctp-surface0) !important;
     border-color: var(--ctp-surface1) !important;
     color: var(--ctp-text) !important;
-}
+} */
 
-.xp-window-wrapper .title-bar-controls button:hover {
+/* .xp-window-wrapper .title-bar-controls button:hover {
     background: var(--ctp-surface1) !important;
     filter: brightness(1.1) !important;
 }
@@ -4238,7 +4289,7 @@ code {
 
 .xp-window-wrapper .title-bar-controls button[aria-label="Close"]:hover {
     background: color-mix(in srgb, var(--ctp-red) 80%, white) !important;
-}
+} */
 
 .xp-window-wrapper .window-body {
     background: var(--ctp-surface0) !important;
@@ -4275,15 +4326,15 @@ code {
     background: var(--ctp-surface1) !important;
 }
 
-.xp-window-wrapper__external-link button[aria-label="Maximize"] {
+/* .xp-window-wrapper__external-link button[aria-label="Maximize"] {
     background: var(--ctp-surface0) !important;
     border-color: var(--ctp-surface1) !important;
-}
-
+} */
+/* 
 .xp-window-wrapper__external-link button[aria-label="Maximize"]:hover {
     background: var(--ctp-surface1) !important;
     filter: brightness(1.1) !important;
-}
+} */
 
 .projects-board__notice {
     background: var(--ctp-surface1);
@@ -4293,3 +4344,20 @@ code {
 .platform-notice{
     background: rgb(73, 70, 70) !important;
 }
+
+/* Shop suggestion box trigger - prevent image rotation on hover */
+.shop-suggestion-box__trigger,
+.shop-suggestion-box__trigger:hover,
+.shop-suggestion-box__trigger:active {
+    transform: none !important;
+}
+
+
+.kitchen-help__paragraph{
+    color: var(--ctp-subtext0) !important;
+}
+
+.tutorial-steps__subtext{
+    color: var(--ctp-accent-hue) !important;
+}
+
