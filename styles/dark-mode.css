@@ -10,7 +10,7 @@ html.dm-no-page-intro :is(
     .post,
     .votes-new__project-card,
     .votes-new__form,
-    .vote-category,
+    /* .vote-category, */
     .modal,
     .cmd-modal,
     .achievement-toast,
@@ -230,7 +230,7 @@ html.dm-route-enter .votes-new__main {
     .flavortown-project-card,
     .shop-item-card,
     .post,
-    .vote-category,
+    /* .vote-category, */
     .kitchen-help-card,
     .achievement,
     .achievement-card,
@@ -281,7 +281,7 @@ img, video {
         .flavortown-project-card,
         .shop-item-card,
         .post,
-        .vote-category,
+        /* .vote-category, */
         .kitchen-help-card,
         .achievement,
         .achievement-card,
@@ -2858,7 +2858,7 @@ a:hover {
 }
 
 .vote-category__score {
-    color: var(--ctp-subtext1) !important;
+    color: var(--ctp-lavender) !important;
     font-weight: 600 !important;
 }
 
@@ -2875,10 +2875,9 @@ a:hover {
 }
 
 .votes-new__form {
-    background-color: var(--ctp-surface0) !important;
+    background-color: transparent !important;
     border-color: var(--ctp-surface1) !important;
     color: var(--ctp-text) !important;
-    animation: dvSlideInDown 0.35s ease both !important;
 }
 
 .votes-new__form h1 {
@@ -2888,14 +2887,14 @@ a:hover {
 .vote-category {
     background-color: var(--ctp-surface0) !important;
     border-color: var(--ctp-surface1) !important;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
-    animation: dvFadeInUp 0.3s ease both !important;
-    transition: transform 0.22s ease, filter 0.22s ease !important;
+    filter: none !important;
+    animation: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16) !important;
 }
 
 .vote-category:hover {
-    transform: translateY(-2px) !important;
-    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.5)) !important;
+    transform: none !important;
+    filter: none !important;
 }
 
 .vote-category__header {
@@ -2914,10 +2913,11 @@ a:hover {
 
 .vote-category__star {
     color: var(--ctp-overlay0) !important;
+    transition: none !important;
 }
 
-.vote-category__star {
-    transition: color 0.15s ease, transform 0.15s ease !important;
+.votes-new__payout-meter-label{
+    color: var(--ctp-subtext0) !important;
 }
 
 .vote-category__input:checked~.vote-category__star {
@@ -2972,20 +2972,24 @@ a:hover {
 .btn-submit {
     background-color: var(--ctp-green) !important;
     color: var(--ctp-crust) !important;
+    transition: none !important;
 }
 
 .votes-new__form .btn-submit::before {
     border-color: var(--ctp-green) !important;
 }
 
-.btn-submit {
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+.btn-submit:hover {
+    background-color: var(--ctp-green) !important;
+    transform: none !important;
 }
 
-.btn-submit:hover {
-    background-color: var(--ctp-teal) !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 14px rgba(127, 212, 196, 0.3) !important;
+.vote-form{
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+}
+.vote-category__body{
+    background-color: transparent !important;
 }
 
 .form-checkbox label {
@@ -4364,3 +4368,16 @@ code {
     border-color: var(--ctp-surface2) !important;
     color: var(--ctp-text) !important;
 }
+
+.projects-ship__validation {
+    background: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+
+}
+
+.vote-form{
+    transition: none !important;
+}
+
+
