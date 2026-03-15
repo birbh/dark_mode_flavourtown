@@ -728,10 +728,8 @@ svg {
 }
 .projects-show__info-card{
     background-color: var(--ctp-surface0) !important;
-    border-color: var(--ctp-surface1) !important;  
     color: var(--ctp-text) !important; 
     position: relative !important;
-    overflow: hidden !important;
 }
 
 .projects-show__info-card::before {
@@ -4361,3 +4359,8 @@ code {
     color: var(--ctp-accent-hue) !important;
 }
 
+.projects-show__info-card-dismiss-button{
+    background: var(--ctp-surface1) !important;
+    border-color: var(--ctp-surface2) !important;
+    color: var(--ctp-text) !important;
+}

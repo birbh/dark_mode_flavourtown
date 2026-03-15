@@ -31,7 +31,7 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
 
 1. Download the zip from releases
 2. Open your browser and go to `chrome://extensions` (or `edge://extensions` / `brave://extensions`)
-3. Enable Developer mode in the top right corner
+3. Enable Developer mode 
 4. Click Load unpacked
 5. Select the folder containing `manifest.json`
 6. Done — the extension icon should appear in toolbar
