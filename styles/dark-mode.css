@@ -268,9 +268,9 @@ img, video {
     transition: transform 0.28s ease, filter 0.28s ease;
 }
 
-:is(.post img, .flavortown-project-img img, .shop-item-card img):hover {
-    transform: scale(1.01);
-    filter: brightness(1.2);
+:is(.post img, .flavortown-project-img img, .shop-item-card img, .shop-order__image img):hover {
+    transform: scale(1.11);
+    filter: brightness(1.13);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1836,6 +1836,12 @@ a:hover {
     background-color: var(--ctp-surface2) !important;
     color: var(--ctp-overlay0) !important;
     border-color: var(--ctp-surface2) !important;
+}
+
+.shop-order__back .btn,
+.shop-order__back .btn:hover,
+.shop-order__back .btn:active {
+    transform: none !important;
 }
 
 .input-group {
@@ -4647,7 +4653,7 @@ code {
     color: white !important;
 }
 
-.shop-order__achievement-requirement {
+.shop-order__achievement-requirement, .shop-order__stock-indicator, .shop-order__disclaimer {
     background: var(--ctp-yellow) !important;
     border-color: var(--ctp-flamingo) !important;
     color: var(--ctp-maroon) !important;
