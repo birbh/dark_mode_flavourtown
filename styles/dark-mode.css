@@ -1573,6 +1573,8 @@ a:hover {
     background-color: var(--ctp-surface0) !important;
 }
 
+
+
 .sidequest-card__buttons .btn--blue,
 .sidequest-card__buttons .btn--red,
 .sidequest-card__buttons .btn--green,
@@ -1596,6 +1598,92 @@ a:hover {
     border-color: var(--ctp-red) !important;
 }
 
+.sidequest-card--lockin .sidequest-card__content{
+    border: none !important;
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin {
+    background-color: var(--ctp-base) !important;
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin .sidequest-show__content{
+    background-color: transparent !important;
+}
+.sidequest-show--lockin .lockin-dashboard{
+    background-color: var(--ctp-surface0) !important;
+    border: 1px solid var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin .lockin-header,
+.sidequest-show--lockin .lockin-grid,
+.sidequest-show--lockin .lockin-faq__grid,
+.sidequest-show--lockin .lockin-weeks__grid {
+    background-color: transparent !important;
+}
+
+.sidequest-show--lockin .lockin-header__title,
+.sidequest-show--lockin .lockin-weeks__title,
+.sidequest-show--lockin .lockin-card__title,
+.sidequest-show--lockin .lockin-faq__title,
+.sidequest-show--lockin .faq-item h4 {
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin .lockin-header__desc,
+.sidequest-show--lockin .lockin-card li,
+.sidequest-show--lockin .faq-item p,
+.sidequest-show--lockin .faq-item li {
+    color: var(--ctp-subtext0) !important;
+}
+
+.sidequest-show--lockin .lockin-card strong,
+.sidequest-show--lockin .faq-item strong,
+.sidequest-show--lockin .lockin-header__desc strong {
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin .lockin-weeks__box {
+    background-color: var(--ctp-surface1) !important;
+    border: 1px solid var(--ctp-surface2) !important;
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin .lockin-weeks__box .wk {
+    color: var(--ctp-subtext1) !important;
+}
+
+.sidequest-show--lockin .lockin-weeks__box .hrs {
+    color: var(--ctp-accent) !important;
+}
+
+.sidequest-show--lockin #lockin-countdown {
+    background: var(--ctp-mantle) !important;
+    color: var(--ctp-text) !important;
+    border: 1px solid var(--ctp-surface2) !important;
+}
+
+.sidequest-show--lockin #lockin-countdown span,
+.sidequest-show--lockin #lockin-countdown .timer-text {
+    color: var(--ctp-accent) !important;
+}
+
+.sidequest-show--lockin a {
+    color: var(--ctp-accent) !important;
+}
+
+.sidequest-show--lockin a:hover {
+    color: var(--ctp-lavender) !important;
+}
+
+
+
+.lockin-card, .lockin-faq , .faq-item, .lockin-weeks{
+    background-color: var(--ctp-base) !important;
+    border: 1px solid var(--ctp-surface1) !important;
+}
 .shop__recently-added-inner {
     background-color: var(--ctp-surface0) !important;
     border: 1px solid var(--ctp-surface1) !important;
@@ -4658,3 +4746,7 @@ code {
     border-color: var(--ctp-flamingo) !important;
     color: var(--ctp-maroon) !important;
 }
+
+
+
+
