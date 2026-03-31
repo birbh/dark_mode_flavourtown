@@ -1678,12 +1678,25 @@ a:hover {
     color: var(--ctp-lavender) !important;
 }
 
+.sidequest-show--lockin .sidequest-show__actions .btn {
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface2) !important;
+    color: var(--ctp-text) !important;
+}
+
+.sidequest-show--lockin .sidequest-show__actions .btn:hover {
+    background-color: var(--ctp-surface1) !important;
+    border-color: var(--ctp-accent) !important;
+    color: var(--ctp-text) !important;
+    transform: none !important;
+}
+
 
 
 .lockin-card, .lockin-faq , .faq-item, .lockin-weeks{
     background-color: var(--ctp-base) !important;
-    border: 1px solid var(--ctp-surface1) !important;
 }
+
 .shop__recently-added-inner {
     background-color: var(--ctp-surface0) !important;
     border: 1px solid var(--ctp-surface1) !important;
@@ -4748,5 +4761,7 @@ code {
 }
 
 
-
+.sidequest-show--optimization .sidequest-show__info-title,.sidequest-show--optimization .sidequest-show__help-note{
+    color: var(--ctp-red) !important;
+}
 
