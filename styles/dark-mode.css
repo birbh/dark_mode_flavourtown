@@ -4765,3 +4765,6 @@ code {
     color: var(--ctp-red) !important;
 }
 
+.readme-markdown-content h1,.readme-markdown-content h2,.readme-markdown-content h3{
+    color: var(--ctp-peach) !important;
+}
