@@ -898,11 +898,11 @@ dialog#balance-modal .balance-history {
 }
 
 .projects-show__payout-votes-text {
-    color: var(--ctp-subtext1) !important;
+    color: var(--ctp-surface0) !important;
 }
 
 .projects-show__payout-votes-text strong {
-    color: var(--ctp-text) !important;
+    color: var(--ctp-surface0) !important;
 }
 
 .projects-show__payout-votes-progress {
@@ -4768,3 +4768,4 @@ code {
 .readme-markdown-content h1,.readme-markdown-content h2,.readme-markdown-content h3{
     color: var(--ctp-peach) !important;
 }
+
