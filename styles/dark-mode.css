@@ -430,9 +430,10 @@ body::before {
 }
 
 .btn--brown {
-    background-color: var(--ctp-accent) !important;
+    background-color: var(--ctp-blue) !important;
     color: var(--ctp-crust) !important;
     border-color: var(--ctp-accent) !important;
+
 }
 
 .btn--brown:hover {
@@ -1604,7 +1605,6 @@ a:hover {
 }
 
 .sidequest-show--lockin {
-    background-color: var(--ctp-base) !important;
     color: var(--ctp-text) !important;
 }
 
@@ -1612,8 +1612,7 @@ a:hover {
     background-color: transparent !important;
 }
 .sidequest-show--lockin .lockin-dashboard{
-    background-color: var(--ctp-surface0) !important;
-    border: 1px solid var(--ctp-surface1) !important;
+    background-color: transparent !important;
     color: var(--ctp-text) !important;
 }
 
@@ -1696,6 +1695,86 @@ a:hover {
 .lockin-card, .lockin-faq , .faq-item, .lockin-weeks{
     background-color: var(--ctp-base) !important;
 }
+
+.lockin-prize-item{
+    background-color: var(--ctp-surface0) !important;
+    border: 1px solid var(--ctp-surface1) !important;
+
+}
+.lockin-prize-item span{
+    color: var(--ctp-green) !important;
+}
+.sidequest-show__prize-row{
+    color: var(--ctp-text) !important;
+}
+.sidequest-show__prizes-list :hover{
+    color: var(--ctp-crust) !important;
+}
+
+.lockin-header__title--massive{
+        background-color: var(--ctp-accent-hue) !important;
+}
+.lockin-progress__labels,
+.lockin-progress__labels strong{
+    color: var(--ctp-flamingo) !important;
+}
+
+.lockin-pace-indicator{
+    background-color: var(--ctp-surface1) !important;
+    border: 1px solid var(--ctp-surface2) !important;
+    color: var(--ctp-mauve) !important
+}
+.lockin-pace-indicator strong{
+    color: var(--ctp-teal) !important;
+}
+
+.lockin-project-selector__label,.lockin-card__date-range{
+    color: var(--ctp-subtext1) !important;
+}
+
+.lockin-project-selector__select{
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+}
+.lockin-project-preview__info{
+    background-color: var(--ctp-surface1) !important;
+}
+.lockin-countdown{
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text)  !important;
+}
+
+.lockin-empty-state,.lockin-countdown__title{
+    color: var(--ctp-text) !important;
+}
+
+.lockin-accomplishment{
+    background-color: var(--ctp-surface1) !important;
+    color: var(--ctp-flamingo) !important;
+}
+.lockin-accomplishment__type,.lockin-accomplishment__time,.lockin-accomplishment__body{
+    color: var(--ctp-subtext0) !important;
+}
+.lockin-past-week{
+    background-color: var(--ctp-surface0) !important;
+    color: var(--ctp-text) !important;
+}
+.lockin-past-week__project{
+    background-color: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+}
+.lockin-past-week__header{
+    color: var(--ctp-text) !important;
+}
+.lockin-past-week__stats{
+    color: var(--ctp-subtext0) !important;
+    background-color: transparent !important;
+}
+
+
+
 
 .shop__recently-added-inner {
     background-color: var(--ctp-surface0) !important;
@@ -2450,7 +2529,7 @@ a:hover {
 }
 
 .music-player__icon {
-    color: var(--ctp-crust) !important;
+    color: darkorange !important;
 }
 
 .music-player__volume {
@@ -4761,11 +4840,41 @@ code {
 }
 
 
-.sidequest-show--optimization .sidequest-show__info-title,.sidequest-show--optimization .sidequest-show__help-note{
+.sidequest-show__info-title, .sidequest-show__help-note{
     color: var(--ctp-red) !important;
 }
 
 .readme-markdown-content h1,.readme-markdown-content h2,.readme-markdown-content h3{
     color: var(--ctp-peach) !important;
+}
+.kitchen-announcement{
+    background: transparent !important; 
+}
+
+
+ .kitchen-announcement .announcement  {
+    background: var(--ctp-surface0) !important;
+}
+
+.kitchen-flavortime-banner{
+    background: transparent !important;
+    border-color: #636363;
+}
+
+.kitchen-open-sauce{
+    background: transparent !important;
+}
+
+
+.music-player__controls{
+    background: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+}
+
+.projects-new__lapse-select{
+    background: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
 }
 
