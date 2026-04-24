@@ -903,7 +903,7 @@ dialog#balance-modal .balance-history {
 }
 
 .projects-show__payout-votes-text strong {
-    color: var(--ctp-surface0) !important;
+    color: #0077CC !important;
 }
 
 .projects-show__payout-votes-progress {
@@ -959,6 +959,11 @@ a:hover {
     color: var(--ctp-lavender) !important;
 }
 
+
+.kitchen-countdown{
+    color: var(--ctp-text) !important;
+    background: transparent !important;
+}
 .kitchen-index {
     background-color: var(--ctp-base) !important;
 }
@@ -4884,3 +4889,44 @@ code {
     background-color: rgba(0, 0, 0, 0.226) !important;
     background-image:linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.152) 50%),linear-gradient(to right, transparent 50%, rgba(218, 114, 120, 0.04) 50%) !important;
 }
+
+.sidequest-show--kernel .sidequest-show__info-card{
+    background: var(--ctp-surface2) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+}
+.sidequest-show--kernel .sidequest-show__prizes-card{
+    background: var(--ctp-surface2) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+ }
+ .sidequest-show__prize-row{
+    background: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+ }
+  .sidequest-show__prize-name{
+    color: var(--ctp-text) !important;
+  }
+ .sidequest-show__prize-name:hover{
+    color: var(--ctp-blue) !important;
+ }
+
+
+ .sidequest-show__cycle-banner {
+    background: transparent !important ;
+    border-color: var(--ctp-surface1) !important;
+ }
+.sidequest-show__cycle-title{
+    color: var(--ctp-peach) !important;
+  }
+
+.sidequest-show--roasted-apples .sidequest-show__description,.sidequest-show__steps{
+    color: var(--ctp-rosewater) !important;
+  }
+
+  .sidequest-show__join-box{
+    background: var(--ctp-surface0) !important;
+    border-color: var(--ctp-surface1) !important;
+    color: var(--ctp-text) !important;
+  }
