@@ -30,7 +30,11 @@ Install from CWS (recommended):
  Remembers your preference 
 
  ## screenshot
- 
+ <img width="1280" height="800" alt="Screenshot 2026-04-25 at 2 19 32 PM 3 42 13 PM" src="https://github.com/user-attachments/assets/937996cc-c93c-4d3f-a74f-0e02f9962eb8" />
+<img width="1280" height="800" alt="Screenshot 2026-04-25 at 2 19 40 PM 3 42 13 PM" src="https://github.com/user-attachments/assets/b91948bf-1331-4ad3-b384-ec26a144143a" />
+<img width="1280" height="800" alt="Screenshot 2026-04-25 at 2 19 47 PM 3 42 13 PM" src="https://github.com/user-attachments/assets/584dc960-050b-4b9e-b080-e69b3261e4a1" />
+<img width="1280" height="800" alt="Screenshot 2026-04-25 at 2 19 53 PM 3 42 13 PM" src="https://github.com/user-attachments/assets/43f927b5-693d-4b3f-9066-a8d83df8dd8c" />
+
 
 ## Installation
 
