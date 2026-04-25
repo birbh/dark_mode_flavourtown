@@ -5,6 +5,7 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
 
 ## Table of Contents
 
+- [Chrome Web Store](#chrome-web-store)
 - [Features](#features)
 - [Screenshot](#screenshot)
 - [Installation](#installation)
@@ -12,6 +13,14 @@ Stop getting blinded at 2am. This extension slaps a clean, true-black dark theme
   - [Firefox](#firefox)
   - [Safari](#safari)
 - [How to Use](#how-to-use)
+- [Development](#development)
+
+
+## Chrome Web Store
+
+Install from CWS (recommended):
+
+[Flavortown Dark Mode on Chrome Web Store](https://chromewebstore.google.com/detail/eopjdkbjpeiigmgahegmfmccjbgakmoj/preview?hl=en&authuser=0)
 
 
 ## Features
@@ -88,9 +97,6 @@ After making changes:
 3. Refresh Flavortown to see your changes
 
 
-## License
-
-Check the LICENSE file for details.
 
 
 Made with caffeine and late night coding
