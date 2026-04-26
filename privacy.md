@@ -27,7 +27,6 @@ Flavortown Dark Mode is a browser extension that applies a dark theme on `https:
 
 ## Permissions usage
 - `storage`: save dark mode preference.
-- `tabs`: send toggle updates to the active tab for instant apply/remove.
 - `declarativeNetRequest` and `declarativeNetRequestWithHostAccess`: apply a static request-header rule on Flavortown host only.
 - Host permission `https://flavortown.hackclub.com/*`: limit operation strictly to Flavortown pages.
 
