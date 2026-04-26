@@ -22,6 +22,8 @@ Install from CWS (recommended):
 
 [Flavortown Dark Mode on Chrome Web Store](https://chromewebstore.google.com/detail/eopjdkbjpeiigmgahegmfmccjbgakmoj/preview?hl=en&authuser=0)
 
+(note:: the store link may not be available at the moment as it is in review. so you can use the methods stated below to test.)
+
 
 ## Features
 
